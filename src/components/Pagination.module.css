@@ -1,0 +1,34 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	margin: 20px;
+}
+
+.pagination>*:hover {
+	outline: 1px solid #484f58;
+}
+
+.pageButton {
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+}
+
+.activeButton {
+	background-color: #2f81f7;
+}
+
+.previousNext {
+	color: #2f81f7
+}
+
+.previousNextDisabled {
+	color: #484f58;
+}
+
+.previousNextDisabled:hover {
+	outline-color: transparent;
+}

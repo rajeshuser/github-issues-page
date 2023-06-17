@@ -1,0 +1,70 @@
+.listHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 25px 5px 15px;
+	background-color: #21262d;
+	border-radius: 10px 10px 0px 0px;
+	height: 50px;
+	font-size: medium;
+}
+
+.openAndClosedStates {
+	flex: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+	.openAndClosedStates {
+		display: none;
+	}
+}
+
+.openState,
+.closedState {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.closedState {
+	color: #8b949e
+}
+
+.filters {
+	flex: 1;
+	color: #8b949e;
+	display: flex;
+	justify-content: flex-end;
+	gap: 7%;
+	font-size: small;
+}
+
+.filters>span {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.filters>span::after {
+	position: absolute;
+	content: "";
+	border: 4px solid transparent;
+	border-top: 4px solid #8b949e;
+	top: 50%;
+	left: 110%;
+}
+
+@media screen and (max-width: 1000px) {
+	.filters {
+		justify-content: space-evenly;
+	}
+
+	.filters>span::after {
+		border: 0px solid transparent;
+	}
+}
