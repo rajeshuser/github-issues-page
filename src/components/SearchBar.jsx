@@ -5,7 +5,7 @@ export default function SearchBar() {
 	return (
 		<div class={styles.searchBar}>
 			<div class={styles.filterAndSearch}>
-				<span class={styles.center}>Filter</span>
+				<span class={styles.center}>Filters</span>
 				<input type="search" placeholder="is:issue is:open" />
 			</div>
 			<div class={styles.labelsAndMilestones}>

@@ -3,6 +3,7 @@ import TasksSVG from "./svgs/TasksSVG";
 import IssueStateSVG from "./svgs/IssueStateSVG";
 import PullSVG from "./svgs/PullSVG";
 import CommentSVG from "./svgs/CommentSVG";
+import TodoSVG from "./svgs/TodoSVG";
 import markCode from "../utils/markCode";
 import getTasks from "../utils/getTasks";
 import styles from "./Issue.module.css";
@@ -47,23 +48,35 @@ export default function Issue({
 				</div>
 				<div class={styles.issueStats}>
 					<span>
-						#{number} opened on {date} at {time} by{" "}
+						#{number} opened on {date} at {time} by &nbsp;
 						<a href={user.html_url} class={styles.user}>
 							{user.login}
-						</a>{" "}
+						</a>
+						&nbsp;
 					</span>
 					<span>
-						<span
-							style={{
-								transform: "rotate(-90deg)",
-								width: "12px",
-								height: "12px",
-								display: "inline-flex"
-							}}
-						>
-							<TasksSVG tasks={tasks} />
-						</span>{" "}
-						{tasks.completedTasks} of {tasks.totalTasks} tasks
+						{tasks.completedTasks === 0 ? (
+							<>
+								<TodoSVG />
+								&nbsp;
+								{tasks.totalTasks} tasks
+							</>
+						) : (
+							<>
+								<span
+									style={{
+										transform: "rotate(-90deg)",
+										width: "12px",
+										height: "12px",
+										display: "inline-flex"
+									}}
+								>
+									<TasksSVG tasks={tasks} />
+								</span>
+								&nbsp;
+								{tasks.completedTasks} of {tasks.totalTasks} tasks
+							</>
+						)}
 					</span>
 				</div>
 			</div>

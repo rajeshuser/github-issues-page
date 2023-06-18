@@ -12,7 +12,7 @@
 	margin: 20px auto;
 	gap: 15px;
 	min-height: 35px;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 }
 
 .filterAndSearch {
@@ -49,7 +49,7 @@
 	border: none;
 	color: white;
 	padding: 0px 10px;
-	background-color: #0a0c0e;
+	background-color: #010507;
 	border-radius: 0px 5px 5px 0px;
 }
 
