@@ -1,0 +1,102 @@
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.searchBar {
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	margin: 20px auto;
+	gap: 15px;
+	min-height: 35px;
+	flex-wrap: wrap;
+}
+
+.filterAndSearch {
+	flex: 10;
+	display: flex;
+	justify-content: space-between;
+	padding: 1px;
+	gap: 1px;
+	border-radius: 5px;
+	background-color: #30363d;
+}
+
+.filterAndSearch>span {
+	flex: 1;
+	padding: 3px;
+	background-color: #21262d;
+	border-radius: 5px 0px 0px 5px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.filterAndSearch>span::after {
+	position: absolute;
+	content: "";
+	border: 4px solid transparent;
+	border-top: 4px solid #8b949e;
+	top: 50%;
+	left: 80%;
+}
+
+.filterAndSearch>input {
+	flex: 10;
+	border: none;
+	color: white;
+	padding: 0px 10px;
+	background-color: #0a0c0e;
+	border-radius: 0px 5px 5px 0px;
+}
+
+.filterAndSearch>input:focus {
+	border: 1px solid white;
+}
+
+.labelsAndMilestones {
+	flex: 3;
+	display: flex;
+	justify-content: space-around;
+	background-color: #30363d;
+	border-radius: 5px;
+	gap: 1px;
+	padding: 1px;
+}
+
+.labelsAndMilestones>p {
+	flex: 1;
+	margin: 0;
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: small;
+	background-color: #161b22;
+}
+
+.labelsAndMilestones>p:nth-child(1) {
+	border-radius: 5px 0px 0px 5px;
+}
+
+.labelsAndMilestones>p:nth-child(2) {
+	border-radius: 0px 5px 5px 0px;
+}
+
+.labelsAndMilestones>p>span {
+	background-color: #484f58;
+	padding: 0px 7px;
+	border-radius: 100px;
+}
+
+.newIssueButton {
+	flex: 1;
+	display: block;
+	background-color: green;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	padding: 5px 10px;
+}

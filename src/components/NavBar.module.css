@@ -1,0 +1,83 @@
+.navBar {
+	color: white;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	height: 30px;
+}
+
+@media screen and (max-width: 700px) {
+	.header {
+		flex-direction: column;
+		justify-content: center;
+		height: 100px;
+	}
+}
+
+.header>div {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.cat,
+.avatar {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0;
+	padding: 10px;
+	border-radius: 100px;
+	border: 1px solid #484f58;
+}
+
+.header>div>button {
+	background-color: transparent;
+	color: white;
+	padding: 7px;
+	border: 1px solid #484f58;
+	border-radius: 5px;
+}
+
+.breadcrumb {
+	flex: 1;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.header>div>input[type=search] {
+	flex: 1;
+	background-color: transparent;
+	border: 1px solid #484f58;
+	border-radius: 5px;
+	padding: 0px 10px;
+}
+
+.navigation {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.navigation>p {
+	margin: 0;
+}
+
+.navigation>p:hover {
+	cursor: pointer;
+}
+
+.navigation>p>span {
+	background-color: #484f58;
+	padding: 0px 7px;
+	border-radius: 100px;
+}

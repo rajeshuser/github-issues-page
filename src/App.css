@@ -1,8 +1,6 @@
 .App {
 	text-align: center;
-	background-color: #0d1117;
 	margin: 0;
-	padding: 30px;
 }
 
 .App-logo {
@@ -52,5 +50,6 @@
 	--color-scale-gray-7: #21262d;
 	--color-scale-gray-8: #161b22;
 	--color-scale-gray-9: #0d1117;
+	--color-scale-gray-10: #0a0c0e;
 	color: #2f81f7;
 }

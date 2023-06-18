@@ -5,6 +5,7 @@ import Pagination from "../components/Pagination";
 import Issue from "../components/Issue";
 import Loading from "../components/Loading";
 import IssuesHeader from "../components/IssuesHeader";
+import SearchBar from "../components/SearchBar";
 import ProTip from "../components/ProTip";
 import { baseURL } from "../contants";
 import styles from "./Issues.module.css";
@@ -40,8 +41,8 @@ export default function Issues() {
 	}, [page, issuesState]);
 
 	return (
-		<div>
-			<h1 class={styles.heading}>Chakra UI Issues</h1>
+		<div class={styles.issuesComponent}>
+			<SearchBar />
 			{isLoading ? (
 				<Loading />
 			) : (
