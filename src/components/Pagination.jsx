@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./Pagination.module.css";
 
-export default function Pagination({ page = 1, totalPages = 100 }) {
+export default function Pagination({ page = 1, totalPages = 100, issuesState = "open" }) {
 	const { pathname } = useLocation();
 
 	page = page <= 0 ? 1 : page;
@@ -26,7 +26,7 @@ export default function Pagination({ page = 1, totalPages = 100 }) {
 		buttons.push(
 			<a
 				key={button}
-				href={`${pathname}?page=${button}`}
+				href={`${pathname}?page=${button}&state=${issuesState}`}
 				class={`${styles.pageButton} ${page === button && styles.activeButton}`}
 				onClick={handleClick}
 			>
@@ -39,7 +39,7 @@ export default function Pagination({ page = 1, totalPages = 100 }) {
 		<div class={styles.pagination}>
 			<a
 				id="previous"
-				href={`${pathname}?page=${page - 1}`}
+				href={`${pathname}?page=${page - 1}&state=${issuesState}`}
 				class={`${styles.pageButton} ${styles.previousNext} ${
 					page === 1 && styles.previousNextDisabled
 				}`}
@@ -50,7 +50,7 @@ export default function Pagination({ page = 1, totalPages = 100 }) {
 			{buttons}
 			<a
 				id="next"
-				href={`${pathname}?page=${page + 1}`}
+				href={`${pathname}?page=${page + 1}&state=${issuesState}`}
 				class={`${styles.pageButton} ${styles.previousNext} ${
 					page === totalPages && styles.previousNextDisabled
 				}`}

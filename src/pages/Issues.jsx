@@ -5,6 +5,7 @@ import Pagination from "../components/Pagination";
 import Issue from "../components/Issue";
 import Loading from "../components/Loading";
 import IssuesHeader from "../components/IssuesHeader";
+import ProTip from "../components/ProTip";
 import { baseURL } from "../contants";
 import styles from "./Issues.module.css";
 
@@ -12,6 +13,7 @@ export default function Issues() {
 	const [issues, setIssues] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [searchParams] = useSearchParams();
+	const [issuesState, setIssuesState] = useState(searchParams.get("state") || "open");
 	const page = searchParams.get("page");
 
 	useEffect(() => {
@@ -24,7 +26,8 @@ export default function Issues() {
 					baseURL,
 					params: {
 						page,
-						per_page: 10
+						per_page: 25,
+						state: issuesState
 					}
 				});
 				setIssues(response.data);
@@ -34,7 +37,7 @@ export default function Issues() {
 				setIsLoading(false);
 			}
 		}
-	}, [page]);
+	}, [page, issuesState]);
 
 	return (
 		<div>
@@ -43,13 +46,14 @@ export default function Issues() {
 				<Loading />
 			) : (
 				<ul class={styles.issues}>
-					<IssuesHeader />
+					<IssuesHeader issuesState={issuesState} setIssuesState={setIssuesState} />
 					{issues.map((issue) => (
 						<Issue key={issue.title} {...issue} />
 					))}
 				</ul>
 			)}
-			<Pagination page={+page} />
+			<Pagination page={+page} issuesState={issuesState} />
+			<ProTip />
 		</div>
 	);
 }
